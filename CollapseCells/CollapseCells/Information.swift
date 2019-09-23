@@ -12,10 +12,4 @@ struct Information {
     let title: String
     let description: String
     var expandle: Bool
-    
-    init(title: String, description: String, expandle: Bool) {
-        self.title = title
-        self.description = description
-        self.expandle = expandle
-    }
 }
