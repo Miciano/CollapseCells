@@ -11,5 +11,5 @@ import Foundation
 struct Information {
     let title: String
     let description: String
-    var expandle: Bool
+    var expanded: Bool
 }

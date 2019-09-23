@@ -21,9 +21,9 @@ class ViewController: UIViewController {
     }
 
     private func makeDataSource() {
-        let info0 = Information(title: "Mussum Ipsum", description: "cacilds vidis litro abertis. Nullam volutpat risus nec leo commodo, ut interdum diam laoreet. Sed non consequat odio. Admodum accumsan disputationi eu sit. Vide electram", expandle: false)
-        let info1 = Information(title: "Quem num gosta di mim", description: "Quem manda na minha terra sou euzis! Casamentiss faiz malandris se pirulitá. Tá deprimidis, eu conheço uma cachacis que pode alegrar sua vidis.", expandle: false)
-        let info2 = Information(title: "Si u mundo tá muito paradis?", description: "Toma um mé que o mundo vai girarzis! Quem num gosta di mim que vai caçá sua turmis! Suco de cevadiss deixa as pessoas mais interessantis. A ordem dos tratores não altera o pão duris. Admodum accumsan disputationi eu sit. Vide electram ", expandle: false)
+        let info0 = Information(title: "Mussum Ipsum", description: "cacilds vidis litro abertis. Nullam volutpat risus nec leo commodo, ut interdum diam laoreet. Sed non consequat odio. Admodum accumsan disputationi eu sit. Vide electram", expanded: false)
+        let info1 = Information(title: "Quem num gosta di mim", description: "Quem manda na minha terra sou euzis! Casamentiss faiz malandris se pirulitá. Tá deprimidis, eu conheço uma cachacis que pode alegrar sua vidis.", expanded: false)
+        let info2 = Information(title: "Si u mundo tá muito paradis?", description: "Toma um mé que o mundo vai girarzis! Quem num gosta di mim que vai caçá sua turmis! Suco de cevadiss deixa as pessoas mais interessantis. A ordem dos tratores não altera o pão duris. Admodum accumsan disputationi eu sit. Vide electram ", expanded: false)
         
         dataSource = [info0, info1, info2]
     }
@@ -53,7 +53,7 @@ extension ViewController: UITableViewDataSource {
 extension ViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         var content = dataSource[indexPath.row]
-        content.expandle = !content.expandle
+        content.expanded = !content.expanded
         dataSource[indexPath.row] = content
         tableView.reloadRows(at: [indexPath], with: .automatic)
     }

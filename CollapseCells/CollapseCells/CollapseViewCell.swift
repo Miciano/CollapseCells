@@ -14,6 +14,6 @@ class CollapseViewCell: UITableViewCell {
     
     func set(content: Information) {
         self.title.text = content.title
-        self.information.text = content.expandle ? content.description : ""
+        self.information.text = content.expanded ? content.description : ""
     }
 }
