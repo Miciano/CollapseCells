@@ -17,7 +17,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.makeDataSource()
-        self.setTable()
+        self.setupTable()
     }
 
     private func makeDataSource() {
@@ -28,7 +28,7 @@ class ViewController: UIViewController {
         dataSource = [info0, info1, info2]
     }
     
-    private func setTable() {
+    private func setupTable() {
         self.table.register(UINib(nibName: "CollapseViewCell", bundle: Bundle.main), forCellReuseIdentifier: "collapseCell")
         self.table.dataSource = self
         self.table.delegate = self
@@ -45,7 +45,7 @@ extension ViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = table.dequeueReusableCell(withIdentifier: "collapseCell") as? CollapseViewCell else { return UITableViewCell() }
-        cell.set(content: dataSource[indexPath.row])
+        cell.setup(content: dataSource[indexPath.row])
         return cell
     }
 }

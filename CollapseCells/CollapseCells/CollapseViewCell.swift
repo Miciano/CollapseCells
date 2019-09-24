@@ -12,7 +12,7 @@ class CollapseViewCell: UITableViewCell {
     @IBOutlet weak var title: UILabel!
     @IBOutlet weak var information: UILabel!
     
-    func set(content: Information) {
+    func setup(content: Information) {
         self.title.text = content.title
         self.information.text = content.expanded ? content.description : ""
     }
